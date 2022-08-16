@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <stdexcept>
 #include "Fraction.h"
 
@@ -135,7 +135,7 @@ Fraction& Fraction::operator-()
 }
 
 int Fraction::euclid_gcd(int a, int b)
-{   // Àëãîðèòì Åâêëèäà ïîèñêà ÍÎÄ
+{   // ÐÐ»Ð³Ð¾Ñ€Ð¸Ñ‚Ð¼ Ð•Ð²ÐºÐ»Ð¸Ð´Ð° Ð¿Ð¾Ð¸ÑÐºÐ° ÐÐžÐ”
 	while (a != b) {
 		if (a > b) { a -= b; }
 		else { b -= a; }

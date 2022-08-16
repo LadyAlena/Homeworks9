@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <stdexcept>
 #include "Fraction.h"
@@ -16,52 +16,52 @@ int main(int argc, char* argv[]) {
 		int value_d = 0;
 
 		do {
-			std::cout << "Ââåäèòå ÷èñëèòåëü äðîáè 1: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¸Ñ‚ÐµÐ»ÑŒ Ð´Ñ€Ð¾Ð±Ð¸ 1: ";
 			std::getline(std::cin, valueN);
 			try {
 				value_n = std::stoi(valueN);
 				break;
 			}
 			catch (std::invalid_argument) {
-				std::cout << "Ìîæíî ââîäèòü òîëüêî ÷èñëî! Ïîâòîðèòå ââîä" << std::endl;
+				std::cout << "ÐœÐ¾Ð¶Ð½Ð¾ Ð²Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ‡Ð¸ÑÐ»Ð¾! ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´" << std::endl;
 			}
 		} while (true);
 
 		do {
-			std::cout << "Ââåäèòå çíàìåíàòåëü äðîáè 1: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ð¼ÐµÐ½Ð°Ñ‚ÐµÐ»ÑŒ Ð´Ñ€Ð¾Ð±Ð¸ 1: ";
 			std::getline(std::cin, valueD);
 			try {
 				value_d = std::stoi(valueD);
 				break;
 			}
 			catch (std::invalid_argument) {
-				std::cout << "Ìîæíî ââîäèòü òîëüêî ÷èñëî! Ïîâòîðèòå ââîä" << std::endl;
+				std::cout << "ÐœÐ¾Ð¶Ð½Ð¾ Ð²Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ‡Ð¸ÑÐ»Ð¾! ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´" << std::endl;
 			}
 		} while (true);
 
 		Fraction f1(value_n, value_d);
 
 		do {
-			std::cout << "Ââåäèòå ÷èñëèòåëü äðîáè 2: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¸Ñ‚ÐµÐ»ÑŒ Ð´Ñ€Ð¾Ð±Ð¸ 2: ";
 			std::getline(std::cin, valueN);
 			try {
 				value_n = std::stoi(valueN);
 				break;
 			}
 			catch (std::invalid_argument) {
-				std::cout << "Ìîæíî ââîäèòü òîëüêî ÷èñëî! Ïîâòîðèòå ââîä" << std::endl;
+				std::cout << "ÐœÐ¾Ð¶Ð½Ð¾ Ð²Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ‡Ð¸ÑÐ»Ð¾! ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´" << std::endl;
 			}
 		} while (true);
 
 		do {
-			std::cout << "Ââåäèòå çíàìåíàòåëü äðîáè 2: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ð¼ÐµÐ½Ð°Ñ‚ÐµÐ»ÑŒ Ð´Ñ€Ð¾Ð±Ð¸ 2: ";
 			std::getline(std::cin, valueD);
 			try {
 				value_d = std::stoi(valueD);
 				break;
 			}
 			catch (std::invalid_argument) {
-				std::cout << "Ìîæíî ââîäèòü òîëüêî ÷èñëî! Ïîâòîðèòå ââîä" << std::endl;
+				std::cout << "ÐœÐ¾Ð¶Ð½Ð¾ Ð²Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ‡Ð¸ÑÐ»Ð¾! ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´" << std::endl;
 			}
 		} while (true);
 
@@ -73,10 +73,10 @@ int main(int argc, char* argv[]) {
 		std::cout << f1.GetValueFraction() << " / " << f2.GetValueFraction() << " = " << (f1 / f2).GetValueFraction() << std::endl;
 		std::cout << " ++ " << f1.GetValueFraction();
 		std::cout << " * " << f2.GetValueFraction() << " = " << (++f1 * f2).GetValueFraction() << std::endl;
-		std::cout << "Çíà÷åíèå äðîáè 1: " << f1.GetValueFraction() << std::endl;
+		std::cout << "Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð´Ñ€Ð¾Ð±Ð¸ 1: " << f1.GetValueFraction() << std::endl;
 		std::cout << f1.GetValueFraction();
 		std::cout << " -- " << " * " << f2.GetValueFraction() << " = " << (f1-- * f2).GetValueFraction() << std::endl;
-		std::cout << "Çíà÷åíèå äðîáè 1: " << f1.GetValueFraction() << std::endl;
+		std::cout << "Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð´Ñ€Ð¾Ð±Ð¸ 1: " << f1.GetValueFraction() << std::endl;
 
 	}
 	catch (std::logic_error ex) {
