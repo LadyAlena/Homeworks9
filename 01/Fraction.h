@@ -8,16 +8,15 @@ private:
 	int denominator_;
 
 public:
-	
 	Fraction(int numerator, int denominator);
 
-	std::string GetValueFraction();
+	std::string GetValueFraction() const;
 
-	bool operator == (const Fraction& other);
-	bool operator != (const Fraction& other);
-	bool operator > (const Fraction& other);
-	bool operator < (const Fraction& other);
-	bool operator >= (const Fraction& other);
-	bool operator <= (const Fraction& other);
+	bool operator == (const Fraction& other) const;
+	bool operator != (const Fraction& other) const;
+	bool operator > (const Fraction& other) const;
+	bool operator < (const Fraction& other) const;
+	bool operator >= (const Fraction& other) const;
+	bool operator <= (const Fraction& other) const;
 };
 

@@ -9,7 +9,7 @@ Fraction::Fraction(int numerator, int denominator)
 	denominator_ = denominator;
 }
 
-std::string Fraction::GetValueFraction()
+std::string Fraction::GetValueFraction() const
 {
 	if (numerator_) {
 		if (numerator_ == denominator_) { return "1";}
@@ -18,32 +18,32 @@ std::string Fraction::GetValueFraction()
 	else {return "0";}
 }
 
-bool Fraction::operator == (const Fraction& other)
+bool Fraction::operator == (const Fraction& other) const
 {
 	return (static_cast<double>(numerator_) / denominator_ == static_cast<double>(other.numerator_) / other.denominator_);
 }
 
-bool Fraction::operator != (const Fraction& other)
+bool Fraction::operator != (const Fraction& other) const
 {
 	return !(*this == other);
 }
 
-bool Fraction::operator > (const Fraction& other)
+bool Fraction::operator > (const Fraction& other) const
 {
 	return (static_cast<double>(numerator_)/denominator_ > static_cast<double>(other.numerator_) / other.denominator_);
 }
 
-bool Fraction::operator < (const Fraction& other)
+bool Fraction::operator < (const Fraction& other) const
 {
 	return (static_cast<double>(numerator_) / denominator_ < static_cast<double>(other.numerator_) / other.denominator_);
 }
 
-bool Fraction::operator >= (const Fraction& other)
+bool Fraction::operator >= (const Fraction& other) const
 {
 	return !(*this < other);
 }
 
-bool Fraction::operator <= (const Fraction& other)
+bool Fraction::operator <= (const Fraction& other) const
 {
 	return !(*this > other);
 }
