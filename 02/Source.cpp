@@ -78,6 +78,12 @@ int main(int argc, char* argv[]) {
 		std::cout << " -- " << " * " << f2.GetValueFraction() << " = " << (f1-- * f2).GetValueFraction() << std::endl;
 		std::cout << "Значение дроби 1: " << f1.GetValueFraction() << std::endl;
 
+		const Fraction f(1, 2);
+		const Fraction f_ = - f;
+
+		std::cout << f.GetValueFraction() << std::endl;
+		std::cout << f_.GetValueFraction() << std::endl;
+
 	}
 	catch (std::logic_error ex) {
 		std::cout << ex.what() << std::endl;

@@ -9,7 +9,7 @@ Fraction::Fraction(int numerator, int denominator)
 	denominator_ = denominator;
 }
 
-std::string Fraction::GetValueFraction()
+std::string Fraction::GetValueFraction() const
 {
 	if (numerator_) {
 		if (numerator_ == denominator_) { return "1"; }
@@ -18,75 +18,59 @@ std::string Fraction::GetValueFraction()
 	else { return "0"; }
 }
 
-bool Fraction::operator == (const Fraction& other)
+bool Fraction::operator == (const Fraction& other) const
 {
 	return (static_cast<double>(numerator_) / denominator_ == static_cast<double>(other.numerator_) / other.denominator_);
 }
 
-bool Fraction::operator != (const Fraction& other)
+bool Fraction::operator != (const Fraction& other) const
 {
 	return !(*this == other);
 }
 
-bool Fraction::operator > (const Fraction& other)
+bool Fraction::operator > (const Fraction& other) const
 {
 	return (static_cast<double>(numerator_) / denominator_ > static_cast<double>(other.numerator_) / other.denominator_);
 }
 
-bool Fraction::operator < (const Fraction& other)
+bool Fraction::operator < (const Fraction& other) const
 {
 	return (static_cast<double>(numerator_) / denominator_ < static_cast<double>(other.numerator_) / other.denominator_);
 }
 
-bool Fraction::operator >= (const Fraction& other)
+bool Fraction::operator >= (const Fraction& other) const
 {
 	return !(*this < other);
 }
 
-bool Fraction::operator <= (const Fraction& other)
+bool Fraction::operator <= (const Fraction& other) const
 {
 	return !(*this > other);
 }
 
-Fraction& Fraction::Reduction()
-{
-	if (numerator_) {
-		int NOD = 0;
 
-		NOD = (numerator_ < 0 && denominator_ < 0) ? -euclid_gcd(-numerator_, -denominator_) :
-			(numerator_ < 0 ? euclid_gcd(-numerator_, denominator_) :
-				(denominator_ < 0 ? -euclid_gcd(numerator_, -denominator_) :
-					euclid_gcd(numerator_, denominator_)));
-
-		numerator_ /= NOD;
-		denominator_ /= NOD;
-	}
-
-	return *this;
-}
-
-Fraction Fraction::operator + (const Fraction& other)
+Fraction Fraction::operator + (const Fraction& other) const
 {
 	Fraction f(numerator_ * other.denominator_ + other.numerator_ * denominator_, denominator_ * other.denominator_);
 
 	return f.Reduction();
 }
 
-Fraction Fraction::operator - (const Fraction& other)
+Fraction Fraction::operator - (const Fraction& other) const
 {
 	Fraction f(numerator_ * other.denominator_ - other.numerator_ * denominator_, denominator_ * other.denominator_);
 
 	return f.Reduction();
 }
 
-Fraction Fraction::operator*(const Fraction& other)
+Fraction Fraction::operator*(const Fraction& other) const
 {
 	Fraction f(numerator_ * other.numerator_, denominator_ * other.denominator_);
 
 	return f.Reduction();
 }
 
-Fraction Fraction::operator / (const Fraction& other)
+Fraction Fraction::operator / (const Fraction& other) const
 {
 	Fraction f(numerator_ * other.denominator_, denominator_ * other.numerator_);
 
@@ -126,12 +110,29 @@ Fraction Fraction::operator--(int i)
 	return temp.Reduction();
 }
 
-Fraction& Fraction::operator-()
+Fraction Fraction::operator-() const
 {
-	Reduction();
-	numerator_ = -numerator_;
+	Fraction temp(*this);
+	temp.Reduction();
+	temp.numerator_ = -numerator_;
+	return temp;
+}
 
-	return (*this);
+Fraction& Fraction::Reduction()
+{
+	if (numerator_) {
+		int NOD = 0;
+
+		NOD = (numerator_ < 0 && denominator_ < 0) ? -euclid_gcd(-numerator_, -denominator_) :
+			(numerator_ < 0 ? euclid_gcd(-numerator_, denominator_) :
+				(denominator_ < 0 ? -euclid_gcd(numerator_, -denominator_) :
+					euclid_gcd(numerator_, denominator_)));
+
+		numerator_ /= NOD;
+		denominator_ /= NOD;
+	}
+
+	return *this;
 }
 
 int Fraction::euclid_gcd(int a, int b)
